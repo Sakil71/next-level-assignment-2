@@ -39,7 +39,7 @@ PostgreSQL হলো একটি শক্তিশালী, ওপেন-স�
 CREATE TABLE users (
 id SERIAL PRIMARY KEY,
 name VARCHAR(50) NOT NULL,
-email VARCHAR(50) UNIQUE NOT NULL
+email VARCHAR(50) NOT NULL
 );
 
 INSERT INTO users (name, email) VALUES ('Shakil', 'sakilahmed7810@gmail.com');
