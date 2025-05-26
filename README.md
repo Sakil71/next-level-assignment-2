@@ -124,7 +124,7 @@ CREATE TABLE users (
 
 #### Example:
 ```
-CREATE TABLE codes (
+CREATE TABLE users (
   country_code CHAR(2)
 );
 ```
