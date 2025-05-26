@@ -4,7 +4,7 @@
 
 PostgreSQL is a powerful, open-source object-relational database system widely used for enterprise-level performance and reliability. It is known for its robust features, flexibility and standards compliance.
 
-#### Key Features:
+### Key Features:
 
 **1. Open Source & Free**
 
@@ -35,7 +35,7 @@ PostgreSQL is a powerful, open-source object-relational database system widely u
 
 - Works on Windows, macOS, Linux and more.
 
-#### Use Cases:
+### Use Cases:
 
 - Web applications
 - Data warehousing and analytics
