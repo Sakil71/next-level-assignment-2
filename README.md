@@ -64,7 +64,7 @@ PostgreSQL-এ প্রাইমারি কি এবং ফরেইন ক�
 CREATE TABLE students (
 id SERIAL PRIMARY KEY,
 name VARCHAR(50) NOT NULL,
-email VARCHAR(50) UNIQUE NOT NULL
+email VARCHAR(50) NOT NULL
 );
 ```
 
@@ -80,7 +80,7 @@ email VARCHAR(50) UNIQUE NOT NULL
 ```
 CREATE TABLE orders (
   order_id SERIAL PRIMARY KEY,
-  user_id INTEGER REFERENCES students(id),
+  user_id INT REFERENCES students(id),
   product TEXT
 );
 ```
