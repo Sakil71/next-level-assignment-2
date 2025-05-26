@@ -44,7 +44,7 @@ PostgreSQL is a powerful, open-source object-relational database system widely u
 
 #### Example:
 
-``
+```
 CREATE TABLE users (
 id SERIAL PRIMARY KEY,
 name VARCHAR(50) NOT NULL,
@@ -52,7 +52,7 @@ email VARCHAR(50) UNIQUE NOT NULL
 );
 
 INSERT INTO users (name, email) VALUES ('Shakil', 'sakilahmed7810@gmail.com');
-``
+```
 
 ## 2. Explain the Primary Key and Foreign Key concepts in PostgreSQL.
 
@@ -71,13 +71,13 @@ A Primary Key is a column or a combination of columns that:
 
 #### Example:
 
-``
+```
 CREATE TABLE students (
 id SERIAL PRIMARY KEY,
 name VARCHAR(50) NOT NULL,
 email VARCHAR(50) UNIQUE NOT NULL
 );
-``
+```
 
 
 ### Foreign Key
@@ -88,13 +88,13 @@ A Foreign Key is a column or combination of columns in one table that:
 - user_id is a foreign key that links each order to a user in the table.
 
 #### Example:
-``
+```
 CREATE TABLE orders (
   order_id SERIAL PRIMARY KEY,
   user_id INTEGER REFERENCES students(id),
   product TEXT
 );
-``
+```
 
 
 ## 3. What is the difference between the VARCHAR and CHAR data types?
@@ -108,11 +108,11 @@ In PostgreSQL both VARCHAR and CHAR are used to store text (string) data, but th
 - Most common, flexible
 
 #### Example:
-``
+```
 CREATE TABLE users (
   name VARCHAR(100)
 );
-``
+```
 
 ### CHAR
 - Fixed-length character string
@@ -123,11 +123,11 @@ CREATE TABLE users (
 - Automatically added to match length
 
 #### Example:
-``
+```
 CREATE TABLE codes (
   country_code CHAR(2)
 );
-``
+```
 
 
 ## 4. Explain the purpose of the WHERE clause in a SELECT statement
@@ -140,7 +140,7 @@ The WHERE clause controls which rows are selected, making your queries more prec
 - Makes queries more efficient and targeted
 
 #### Example:
-``
+```
 CREATE Table rangers (
     ranger_id SERIAL PRIMARY KEY UNIQUE,
     name VARCHAR(100) NOT NULL,
@@ -152,7 +152,7 @@ INSERT INTO rangers VALUES('Shakil Ahamed', 25), ('Sayla', 21), ('Siuli', 17);
 SELECT * FROM rangers WHERE age > 18;
 SELECT * FROM rangers WHERE name = 'Sayla';
 
-``
+```
 
 ### Common Operators Used with WHERE:
 - = , != or <>, 
@@ -171,12 +171,12 @@ The LIMIT and OFFSET clauses in SQL including PostgreSQL are used to control the
 - Helps when you only want a subset of results, such as the top 5 or latest 10 records.
 
 #### Example:
-``
+```
 SELECT * FROM rangers
 LIMIT 5;
 
 **Returns only the first 5 rows from the students table.**
-``
+```
 
 
 ### OFFSET Clause
@@ -186,19 +186,19 @@ LIMIT 5;
 
 
 #### Example:
-``
+```
 SELECT * FROM rangers
 OFFSET 5;
 
 **Skips the first 5 rows, then returns all remaining rows.**
-``
+```
 
 ### Use Case: Pagination in Web Apps
-``
+```
 SELECT * FROM rangers LIMIT 10 OFFSET 0;
 SELECT * FROM rangers LIMIT 10 OFFSET 10;
 SELECT * FROM rangers LIMIT 10 OFFSET 20;
-``
+```
 
-**Without ORDER BY, the result set may not be consistent across queries.**
-**For large data sets, OFFSET can become inefficient — consider using keyset pagination or cursors for better performance.**
+- **Without ORDER BY, the result set may not be consistent across queries.**
+- **For large data sets, OFFSET can become inefficient — consider using keyset pagination or cursors for better performance.**
